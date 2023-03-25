@@ -1,5 +1,7 @@
 package com.intecap.Apibooks.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -16,9 +18,10 @@ public class Libro implements Serializable { //Serializable: es una interfaz que
     private String descripcion;
 
     // Relacion de muchos a uno / un libro puede tener una categoria, pero una categoria puede tener muchos libros
-    @ManyToOne
-    @JoinColumn(name = "categoria_id") // nombre de la columna en la tabla libro
-    Categoria categoria; // objeto de tipo categoria
+    @ManyToOne(fetch = FetchType.LAZY) // FetchType.LAZY: carga los datos de la tabla categoria cuando se necesite
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) // // ignora los atributos de la clase categoria que no se van a utilizar en la clase libro
+
+    private Categoria categoria; // objeto de tipo categoria
 
     public Long getId() {
         return id;
