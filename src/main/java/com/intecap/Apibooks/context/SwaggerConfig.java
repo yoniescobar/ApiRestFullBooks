@@ -13,8 +13,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.Collections;
 
-@Configuration
-@EnableSwagger2
+@Configuration // Indica que es una clase de configuración de Spring Boot (similar a un archivo de propiedades)
+@EnableSwagger2 // Habilita la documentación de Swagger
 public class SwaggerConfig {
 
     @Bean
@@ -29,11 +29,11 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfo(
-                "Todo API",
-                "La API REST de Apibooks.",
+                "Apiboos API",
+                "La API REST de Apibooks permite realizar operaciones CRUD sobre la base de datos de libros.",
                 "v1",
                 "Terms of service",
-                new Contact("Intecap", "www.intecap.com", "myeaddress@company.com"),
+                new Contact("Intecap", "www.intecap.com", "yoniedilzar@gmail.com"),
                 "License of API", "API license URL", Collections.emptyList());
     }
 }

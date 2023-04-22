@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController // @RestController: indica que es un controlador de tipo REST
 @RequestMapping("/api/v1") // @RequestMapping: indica la ruta base de la API
-@CrossOrigin(origins = "4000") // @CrossOrigin: indica que esta API puede ser consumida por cualquier cliente
+@CrossOrigin(origins = {"http://localhost:3001", "http://localhost:3000","http://localhost:4200"}) // Indica que este controlador REST puede ser accedido desde cualquier origen (dominio) y desde cualquier puerto (3000, 3001, etc)
 public class LibroRestController {
 
     @Autowired // @Autowired: inyecta el servicio de libros para poder utilizarlo en este controlador REST
