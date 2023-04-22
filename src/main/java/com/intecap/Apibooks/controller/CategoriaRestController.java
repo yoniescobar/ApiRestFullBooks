@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin//  (originPatterns = {"http://localhost:3000"}) acceso a datos React
+@CrossOrigin("*") // to allow from all domains
+//@CrossOrigin("http://localhost:3001") // to allow from specific domain
+//@CrossOrigin(origins = "http://localhost:3001")// Indica que este controlador REST puede ser accedido desde cualquier origen (dominio)
 @RestController // Indica que es un controlador REST y que se encarga de recibir las peticiones HTTP y devolver las respuestas en formato JSON
 @RequestMapping("api/v1") // uri  Indica la ruta base para todas las peticiones que se hagan a este controlador
 public class CategoriaRestController {
