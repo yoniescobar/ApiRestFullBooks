@@ -9,8 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 
-
-@CrossOrigin(origins = "*", allowedHeaders = "Requestor-Type", exposedHeaders = "X-Get-Header")
+@CrossOrigin(origins = {"http://localhost:3001", "http://localhost:3000"})
 //@CrossOrigin("http://localhost:3001") // to allow from specific domain
 //@CrossOrigin(origins = "http://localhost:3001")// Indica que este controlador REST puede ser accedido desde cualquier origen (dominio)
 @RestController // Indica que es un controlador REST y que se encarga de recibir las peticiones HTTP y devolver las respuestas en formato JSON
