@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "*", methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE}) // to allow from all domains
+
+
+@CrossOrigin(origins = "*", allowedHeaders = "*") // to allow from any domain
 //@CrossOrigin("http://localhost:3001") // to allow from specific domain
 //@CrossOrigin(origins = "http://localhost:3001")// Indica que este controlador REST puede ser accedido desde cualquier origen (dominio)
 @RestController // Indica que es un controlador REST y que se encarga de recibir las peticiones HTTP y devolver las respuestas en formato JSON
